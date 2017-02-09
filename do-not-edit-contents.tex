@@ -1,11 +1,11 @@
 % Sample apostrophy’s to remove team’s 
 
-\title{Sustainable Software Development through Overlapping Pair Rotation}
+\title{Removing Knowledge Silos, Continuous Refactoring, and Overlapping Pair Rotation: 3 Keys to Sustainable Software Development}
 
 \author{Todd~Sedano,~\IEEEmembership{Member,~IEEE,}
         Paul~Ralph,~\IEEEmembership{Member,~IEEE,}
         and~C\'ecile~P\'eraire,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
-\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem T. Sedano was with Pivotal Software and with the Department of Electrical and Computer Engineering, Carnegie Mellon University, Pittsburgh,
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem T. Sedano is with Pivotal Software, Palo Alto, CA and with the Department of Electrical and Computer Engineering, Carnegie Mellon University, Pittsburgh,
 CA, 15412.\protect\\
 % note need leading \protect in front of \\ to get a newline within \thanks as
 % \\ is fragile and will error, could use \hfil\break instead.
@@ -19,7 +19,7 @@ E-mail: cecile.peraire@sv.cmu.edu
 
 \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
 
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+\markboth{IEEE Transactions On Software Engineering,~Vol.~14, No.~8, August~2015}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Computer Society Journals}
 
 \IEEEtitleabstractindextext{%
@@ -48,9 +48,11 @@ Computer Society, IEEE, IEEEtran, journal, \LaTeX, paper, template.
 \IEEEdisplaynontitleabstractindextext
 \IEEEpeerreviewmaketitle
 
-\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
-
+\IEEEraisesectionheading{
 \section{Introduction}
+\label{sec:introduction}
+}
+
 \IEEEPARstart{I}{magine} being a software development manager when one of your top engineers, Dakota, gives notice and is moving on to a new job opportunity. You are simultaneously excited because the new position provides a great career opportunity for someone you respect, yet distressed that her departure may exacerbate your own project. How will the team overcome this disruption? Your investment in this engineer and her entire accumulated knowledge about the project is evaporating. Dakota developed some of the systems' trickiest, most important components. How long will it take the other programmers to assimilate Dakota's code?  How will this affect their productivity and future development?
 
 
@@ -58,14 +60,14 @@ Conventional wisdom says that team churn is detrimental to project success and t
 
 Exploring this question resulted in a descriptive theory of \quotes{Sustainable Software Development.} The theory explains how a collection of synergistic principles, policies, and practices help develop software effectively while overcoming team disruption. This is done by engendering a positive attitude towards team disruption, encouraging knowledge sharing and continuity, as well as prioritizing high code quality. Here, \textit{team disruption} refers to substantial ongoing changes in team composition, including team members joining or leaving, as well as temporary vacations or leave of absence. 
 
-In Section \ref{RelatedWork}, we present related work on Extreme Programming and team disruption. In Section \ref{ResearchMethod}, we review how we employed Constructivist Grounded Theory to derive a descriptive theory supported by empirical data. We also present the research context, introducing both the company and one of the five projects under study. In Section \ref{Theory}, we describe the theory and how its principles, policies, and practices work together to achieve software development sustainability. In Section \ref{TheoryEvaluation}, we evaluate the theory using established criteria for evaluating a Grounded Theory. In the last sections, we examine threats to research validity, consider future research, and conclude the research.
+In Section \ref{RelatedWork}, we present related work on Extreme Programming and team disruption. In Section \ref{ResearchMethod}, we review how we employed Constructivist Grounded Theory to derive a descriptive theory supported by empirical data. We also present the research context, introducing both the company and one of the five projects under study. In Section \ref{Theory}, we describe the theory and how its principles, policies, and practices work together to achieve software development sustainability. In Section \ref{ResultsEvaluation}, we evaluate the theory using established criteria for evaluating a Grounded Theory. In the last sections, we examine threats to research validity, consider future research, and conclude the research.
 \section{Related Work}
 \label{RelatedWork}
 In Extreme Programming \cite{BeckExtremeProgramming2004}, Kent Beck describes a set of interdependent practices that manage feature development (much like Scrum \cite{SchwaberScrum}), as well as technical practices that facilitate a collaborative team environment. Extreme Programming comprises 13 primary practices and 11 corollary practices. 
 
 One Extreme Programming practice, collective ownership, simply means that \quotes{anyone on the team can improve any part of the system at any time.} Beck contrasts collective ownership with \quotes{no ownership} and \quotes{individual ownership.} With collective ownership, every developer takes responsibility for the whole of the system. When developers see opportunities to improve the code, they go ahead and improve it if it makes their life easier \cite{BeckExtremeProgramming1999}. Later, \quotes{collective ownership} was renamed to \quotes{shared code} \cite{BeckExtremeProgramming2004}. 
 
-One Extreme Programming practice contributing to collective code ownership is pair programming. Pair programming is where production code is created by two developers working together at a single computer \cite{BeckExtremeProgramming2004}. Extreme Programming does not prescribe how pairs are formed or for how long a pair works together. Williams presents a pair rotation strategy for maintaining specialization, by \quotes{choosing the right partner for the right situation}  \cite{Williams2002}. People are assigned modules of the code to own based upon expertise and find partners from neighboring modules. While knowledge is shared with pairing, one person owns every story that touches their part of the system, building individual code ownership. In one case study, the project started with a pair rotation strategy based on skillsets but evolved into a daily rotation determined randomly \cite{Vanhanen2007}. Some teams use a pair programing matrix \cite{AlaverdyanPairProgrammingMatrix} (also called a pairing ladder \cite{Davies2009AgileCoaching}) to track who has paired with whom for the purpose of pairing people who have not paired recently.
+One Extreme Programming practice contributing to collective code ownership is pair programming. Pair programming is where production code is created by two developers working together at a single computer \cite{BeckExtremeProgramming2004}. Extreme Programming does not prescribe how pairs are formed or for how long a pair works together. Williams presents a pair rotation strategy for maintaining specialization, by \quotes{choosing the right partner for the right situation}  \cite{Williams2002}. People are assigned modules of the code to own based upon expertise and find partners from neighboring modules. While knowledge is shared with pairing, one person owns every story that touches their part of the system, building individual code ownership. In one case study, the project started with a pair rotation strategy based on skillsets but evolved into a daily rotation determined randomly \cite{Vanhanen2007}. Some teams use a pair programming matrix \cite{AlaverdyanPairProgrammingMatrix} (also called a pairing ladder \cite{Davies2009AgileCoaching}) to track who has paired with whom for the purpose of pairing people who have not paired recently.
 
 Truck Number is \quotes{The size of the smallest set of people in a project such that, if all of them got hit by a truck, the project would be in trouble.} \cite{WikiTruckNumber}. Truck Number, or Bus Count, reminds management about the effects of disruptive events for a team. In 1994, Coplien \cite{Coplien1994} mentions \quotes{Truck Number} as a risk to his Solo Virtuoso pattern of using only one talented developer to create a software system. Awati suggests that Truck Number can be increased by reducing complexity, cross-training, and documentation \cite{AwatiBusFactor}, all of which are found in Extreme Programming. However, Extreme Programming implements \quotes{documentation} as discoverable, intention revealing code. Ricca \cite{Ricca2011TruckFactor} examines the difficulty in computing the Truck Number. 
 
@@ -75,6 +77,8 @@ Rigby quantifies turnover using knowledge at risk analysis on abandoned files  \
 \subsection{Constructivist Grounded Theory}
 
 We adopted Grounded Theory \cite{Charmaz}, which provides an iterative approach to data collection, data coding, and analysis resulting in an emergent theory. We selected Charmaz' Constructivist approach to Grounded Theory, which \quotes{emphasizes understanding and acknowledges that data, interpretations, and resulting theory depend on the researcher’s view} \cite{StolGroundedTheory}. The two primary data sources were field notes collected during continuous participant observations of a seven-month project and interviews with Pivotal software engineers, interaction designers, and product managers. Interviews were recorded, transcribed, coded, and analyzed using constant comparison. In addition, the first author was involved in four other projects as participant-observer.
+
+Our presentation is informed by Stol et al.’s reporting guidelines for grounded theory studies in software engineering \cite{StolGroundedTheory}. 
 
 Grounded Theory immerses the researcher within the context of the research subject from the point of view of the participants. As the research progresses, Grounded Theory allows the researcher to \quotes{incrementally direct the data collection and theoretical ideas.} The theory provides a starting place for inquiry, not a specific goal known at the beginning of the research. As we interact with the data, the data influence how we progress and alter the research direction. When starting a Grounded Theory research study, the core question is, \quotes{What is happening here?} \cite{GlaserTheoreticalSensitivity}. Our initial core question was \quotes{What is happening at Pivotal when it comes to software development?}
 \subsection{Participants}
@@ -138,7 +142,7 @@ Overlapping Pair Rotation \\
 \end{table}
 
 
-\subsection{Research Context}
+\subsection{Research Context: Pivotal}
 \label{ResearchContext}
 
 Pivotal is a large American software company (with 16 offices around the world), which provides solutions for cloud-based computing, big data, and agile development. 
@@ -299,15 +303,7 @@ This section presents practices for encouraging knowledge sharing and continuity
 
 \textbf{Purpose:} The rotation of developers helps spread knowledge and promotes team code ownership. The goal is to prevent the situation where one or two developers understands how  part of the system works and must be assigned any story related to that part of the system. The entire team should be able to modify the code. Rotation helps prevent knowledge silos and individual code ownership from forming. 
 
-\textbf{At Pivotal:} Whenever a knowledge silo begins to emerge, the team actively fights against it and tries to spread that knowledge around through pair rotation. During the study, three strategies were observed.
-
-\textit{Optimizing for people rotation:} Most teams rotate based on who has paired with whom. Developers try to pair with the person they \quotes{least recently paired with} (basically a Least Recently Used strategy). Some teams use rotation techniques or tools to track this information.
-
-This strategy does not clearly articulate the purpose of knowledge silo removal and the need for knowledge transfer. As an example, developers who recently left a track of work might ask to be rotated back without realizing the potential cost to the team. This prevents an opportunity to spread the knowledge to the rest of the team. (This issue is more serious on larger teams; on a four person team, this is not an issue).
-
-\textit{Optimizing for personal preferences:} A few teams allow developers to pick with whom they will work or on which stories to work based on individual preferences. This has the same downsides as the previous strategy. 
-
-\textit{Optimizing for context sharing:} A few teams are experimenting with rotating onto a track the person who has not been working on the track for the longest time. The goal each day is for the developer leaving the track next to empower the developer who will remain on the track. Before any rotation, the remaining developer is asked, \quotes{Was enough context shared with you?} If the answer is no, then the first developer does not leave and the pair continues to work together for another day. This provides a feedback loop on how well the team is transferring knowledge. 
+\textbf{At Pivotal:} Whenever a knowledge silo begins to emerge, the team actively fights against it and tries to spread that knowledge around through pair rotation. Section \ref{OverlappingPairRotation} describes several rotation strategies observed during the study.
 
 \textbf{Anti-pattern:} Removing this practice means that developers can work on the same part of the code base for extended periods of time, developing individual code ownership and knowledge silos. One participant described their experience at a previous company that follows Extreme Programming. Developers could be paired for more than a month working on only one part of the system. This lack of pair rotation led to deep knowledge silos. 
 
@@ -368,29 +364,207 @@ Writing tests after the code is written could produce a safety net for refactori
 \textbf{At Pivotal:} In the ideal workflow, developers merge their code to master many times a day. If a pair has not merged to master by the afternoon, the pair typically starts examining why this is difficult and explores ways of incrementally making changes. Developers may use branches to save spikes. When rotating pairs, developers may use branches to move work-in-progress code between machines. 
 
 \textbf{Anti-pattern:} Removing this practice means that code lives in branches for days or weeks. Integrations might be painful due to merge conflicts and developers might delay needed refactorings. If a developer has code only on their machine, then no one else on the team can use or modify that code. When code lives only on one machine for many days in a row, the machine acts as a \quotes{virtual branch.} Running a Continuous Integration box and having long running branches is an anti-pattern.
-\section{Theory Evaluation}
-\label{TheoryEvaluation}
+
+\section{Team Code Ownership}
+\textit{Team Code Ownership} (which is similar to \textit{Collective Code Ownership} and \textit{Shared Code}) is a software development practice where any developer on a team has the right to change any of the team’s code. Team code ownership is intended to accelerate development by allowing any developer to fix any team bug and by mitigating delays due to vacations, illness and other absence \cite{BeckExtremeProgramming2004}.
+ 
+While some research has investigated the effects of different code ownership models, we are unaware of any studies that specifically investigate developers’ sense of team code ownership; that is, the complex interactions between developers’ knowledge, emotions, and approach to code ownership.  
+
+We discovered that having the right to change a file does not mean that a specific developer will feel empowered to and justified in making a specific change. For example, a developer may feel reluctant to change code that he or she does not really understand. As we refined this core finding and allowed it to drive further data collection, we identified five factors associated with feelings of team code ownership. 
+
+\subsection{Collective Code Ownership}
+In Extreme Programming \cite{BeckExtremeProgramming2004}, Kent Beck describes a set of interdependent practices for managing feature development and facilitating a collaborative team environment. One of these practices is \textit{collective ownership}---\quotes{Anyone can change any piece of code in the system at any time.} \cite{BeckExtremeProgramming1999}. The book contrasts collective ownership against \quotes{no ownership} and \quotes{individual ownership.} In 2004, collective ownership is renamed \textit{shared code} \cite{BeckExtremeProgramming2004}.
+
+In 2006, Martin Fowler defined \textit{collective code ownership}, similarly to Beck \cite{FowlerCodeOwnership}, as a contrasting team position to \quotes{strong code ownership} where each file has one owner and \quotes{weak code ownership} where developers can change files, but an owner keeps an eye on files for which they are responsible. 
+
+Later, Bird et al. \cite{BirdDontTouchMyCode} contrasted the effects of strong- and weak-ownership. They demonstrated that weak ownership leads to more defects than strong ownership for Windows Vista and Windows 7. The study defined ownership for a software component as a percentage of the version control commits for a single developer. They defined a major contributor as someone who has more than 5\% of the git commits. A sensitivity analysis revealed that defining strong code ownership within the range from 2\% to 10\% produced similar results for the study.
+
+Meanwhile, Murphy  \cite{MurphyIEEESoftware} argued that the concept of code ownership must be unpacked and expanded. He argued that the complexities of code ownership are missed by merely examining git commits to determine who modified which files.
+
+Our paper renames \textit{collective code ownership} to \textit{team code ownership}. For small systems and teams, these terms are synonymous. For a large system with multiple teams, in practice, teams would have strong ownership of their portion of the system. Allowing any pair to modify any part of Microsoft Windows or Pivotal Cloud Foundry is impractical.
+
+Team code ownership requires more than a team saying, \quotes{everyone can modify anything.} Instead, this paper examines how a team feels that they own the code. We define \quotes{sense of team code ownership} as \quotes{the ability for any developer on a team to change any of the team’s code} and a developer’s sense of team code ownership is the degree to which individual members of the team feel collective ownership.  
+
+\subsection{Psychological Ownership}
+Psychological ownership refers to \quotes{the feeling of possessiveness and of being psychologically tied to an object} \cite{Pierce2001}. Targets of ownership, whether physical or immaterial, become the extension of one’s self: \quotes{What is mine becomes (in my feelings) part of ME} \cite{Isaacs1933}. Ownership can be attached to a part or the whole. Psychological ownership occurs when the object becomes part of the psychological owner’s identity. Psychological ownership answers the question, \quotes{What do I feel is mine?}
+
+Changes in ownership can have strong effects on our self-identity. An increase in the number of possessions can produce positive effects \cite{Formanek1994}, while a diminish can lead to a personality shrinkage \cite{James1890}. Someone threatening a person’s ownership can trigger strong emotions and responses.
+
+Peirce \cite{Pierce2001} identifies three sources or \quotes{roots} of psychological ownership: efficacy and effectance, self-identity, and having a place. A major reason for possession of physical goods or abstract ideas is rooted in the innate human desire to be in control; being able to alter one’s environment creates feelings of efficacy and pleasure. Ownership fulfills the need for self-identification as people define themselves, express themselves, and ensure their own survival by what they own. Ownership fulfills the need to have a place and a territory to possess. \quotes{Each motive facilitates the development of psychological ownership, rather than directly causes this state to occur.} Psychological ownership occurs with code because creating software can satisfy the desire for efficacy and effectance, self-identity, and having a place.
+
+Peirce identifies three paths or \quotes{routes} to ownership: controlling the target, coming to intimately know the target, and investing the self into the target. With \emphasis{controlling the target}, targets that can be controlled are perceived to be part of the self.  As  individuals repeatedly exercise control of an object, eventually this leads to \quotes{feelings of ownership toward that object.} The higher the autonomy of the job task, the more likely ownership develops toward the activity. When a person has little control over an activity, psychological ownership is unlikely to develop. With \emphasis{coming to intimately know the target}, the association with the object creates feelings of ownership. One example is when a gardener feels that the garden belongs to the gardener. (This happens routinely with software developers who feel that they own part of the code base, when in reality, the company owns the software.) Feelings of ownership increase as one becomes intimately familiar with the object and associated with it. With \quotes{investing the self into the target,} we feel that we own what we create, shape or produce. Spending time, energy, and effort enables us to alter our view of ourselves to include identity with the object. The more investing in the object, the stronger the psychological ownership. Nonroutine, complex jobs infuse more of our own ideas resulting in increased ownership.
+
+\subsection{Six factors affecting ownership}
+In the literature, collective code ownership is often treated as a policy statement. In this case, simply claiming that \quotes{anyone can modify any piece the code} was not sufficient to engender willingness to modify any file. Rather, ownership is an emotional or qualitative attribute that ties all developers on the team to the project and code base. It is a spectrum where, on one side, each individual has ownership of only their code, and on the other side, everyone on the team owns the entire code base. Some events appear to erode the team's sense of ownership over the project’s duration, while some practices appear to counteract these erosions. This section details the five factors that appear most related to team code ownership and examples of events or tendencies that erode it. 
+
+\subsubsection{System Context}
+\textbf{Definition:} System context is the knowledge and situational awareness about the code, including the discourse that surrounds the code. System context includes understanding existing design decisions, underlying technologies, the relationship between features and user needs, and the implementation of existing features.
+
+\textbf{Purpose:} Developing an in-depth knowledge of the system exercises the \quotes{intimately knowing the target} path of psychological ownership.
+
+For a pair to work efficiently on any part of the system, one of them needs to have enough context to know how that part of the system works. Without enough context, a pair might struggle, slow down, or be blocked in working on a feature.
+
+Team code ownership seems to vary with the context that the developer has about the code; the more the developer knows, the higher the sense of ownership. Knowledge silos, the size of the code base, or the number of developers working in parallel can make it difficult for a programmer to develop a deep system context level.
+
+\textbf{Threat: Increasing knowledge silos.} When developers routinely work on one part of the code base, they can develop specific system context not shared by the team. Code specialization impedes anyone on the team from modifying any part of the team’s code.  One team said \participantQuote{We need Marion on that story, only she knows the Apple watch code base,} and \participantQuote{Shea knows the ins-and-outs of the legacy integration, we need him to work on this story,} which means there is a hindering imbalance between the individual and team understanding of the code.
+
+\textbf{Threat: Increasing code base size.} The primary researcher participated on a team working with a large code base that was over eight years old and the team did not have a full understanding of the system. Initially, the team felt little ownership of the code, even though the team was responsible for it and agreed to \quotes{team code ownership.} Often the team would need to ask a product manager why certain features exist in the code to understand the code’s purpose and implementation. In time, as the team worked with the code and gained context, the team’s sense of ownership improved.
+
+\textbf{Threat: Increasing team size.} The primary researcher observed the relationship between team size and code context on five Pivotal projects as a participant-observer. As team size increases, the ability to gain system context decreases. Every day, all pairs are adding to the system. On a five pair team, so much work is happening each day that it becomes increasingly difficult to keep track of everything that changes.
+
+One developer on a ten-person project said, \participantQuote{I feel that we don't have the context spread around fully. Having five, sometimes six, pairs on the project makes it go really fast, so it's hard to keep context.}
+
+When developers do not have context about part of a system, or context about what remains to be done to finish a story, reluctance to start the next story at the top of the backlog emerges. It’s easier to start a story that touches part of the system that they know. As one developer reflected, \participantQuote{I am not entirely comfortable to jump into stories on certain aspects [of the system].}
+
+As a coping strategy, one developer, before the start of the work day, skimmed the git commits from the previous day to learn about new classes and changes in design and to understand the features the team added. 
+
+As team size grows, there is a potential risk of decreasing an individual developer’s sense of team code ownership. 
+
+\subsubsection{Code Contribution}
+\textbf{Definition:} Code contribution is the portion of the code that a given developer has worked on. 
+
+\textbf{Purpose:} Personally contributing to the code base increases a developer’s sense of ownership by exercising \quotes{investing in the target} path of psychological ownership. 
+
+As a developer works on the code base, the developer’s system context level increases. While code contribution level influences the system context level, it is not necessary related: developers might learn about the code through other means different from direct contribution, including conversations at stand-up, impromptu team huddles, or a pair saying \participantQuote{Check out what we did yesterday.}
+
+\textbf{Threat: Inability to contribute.}  A developer’s inability to contribute to the code base decreases the developer’s sense of ownership. 
+
+This could happen, for instance, during a pair programming breakdown. When the pairing experience breaks down, one person drives the code development while the partner passively watches. (We call this dynamic \quotes{Performance Pair Programming,} when one developer plows through a story and stops listening to the developer’s partner.)  When one person is writing all the code, individual code ownership replaces team code ownership.  
+
+%six paper vesion
+In one situation, the partner took over and ignored the participant’s input. The participant reflected, \participantQuote{I would not be able to explain deeply what we had done. I would not be able to maintain it. I didn't really write it, so I feel very little ownership of it.} 
+
+% full version: In one situation, the partner took over and ignored the participant’s input. The participant reflected, \participantQuote{I did not understand what was really going on. I wouldn't be able to explain deeply what we had done. I wouldn't be able to maintain it. I didn't really write it, so I feel very little ownership of it.} 
+
+
+Ideally, Pair Programming is a collaborative experience where both individuals are unable to tell who wrote which portions of the code. 
+
+\subsubsection{Code Quality}
+\textbf{Definition:} Code quality relates to how well the code satisfies the project’s desirable quality attributes. Desirable quality attributes might include design qualities, performance, reliability, scalability, security,  testability, and usability \cite{Meier2009}. 
+
+\textbf{Purpose:} A high quality product satisfies the self-identity motivation of psychological ownership. Developers might not want to be identified with a low quality product.
+
+Low-quality products also tend to involve a disproportionate amount of bug fixes. Developers need a balance between creating new features and fixing bugs each week. Working only on bugs for weeks affects their sense of ownership.    
+
+\textbf{Threat: Pressure to deliver and deprioritizing continuous refactoring.} When developers are pressured to deliver more features at the expense of Continuous Refactoring, the code acquires technical debt, the code becomes more difficult to work with, and developers can begin to feel indifferent about the code. When developers begin to experience code apathy, this decreases their sense of team code ownership. 
+
+When the team neglects refactoring, new code is simply bolted onto the existing design. Each time the team bolts something else on, bolting on the next piece becomes more complicated. Thus, a dilemma arises for the programmers working on the next story that touches this part of the code: do they continue bolting on more code, or do they perform the pretermitted refactoring? A team’s avoidance of refactoring may be a sign that code apathy is settling in. Code apathy results in reduced quality, as the developers become less invested in the craftsmanship of the code.
+
+One developer felt \participantQuote{proud and disgusted} about the code base. He is simultaneously proud of each refactoring that the team performed and disgusted by the technical debt the team accrued by taking shortcuts to ship more features. The developer drew Figure \ref{Interview31} to show his feeling about the code, \participantQuote{It is generally orderly with a few bits that maybe are not as orderly.}
+
+Before the first launch of a product, the product manager suggested that the team deliver more features at the expense of technical debt. For some of the team, this was an unacceptable tradeoff, and those developers decided not to cut corners. Others on the team complied with the request and incurred technical debt. The entire team ended up paying the consequences with extensive refactors after the launch. On a communal code base, one pair adding tech debt affects everyone on the team.
+
+When code apathy settles in, team members adopt the attitude that someone else will solve the problem with the code. When this attitude permeates a team, no one is solving the problems. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\oneColumnWidth{}]{drawings/2016_09_26.png}
+\caption{Interview 31: Software Engineer's drawing for \quotes{How you feel or how you think about the code'}}
+\label{Interview31}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\oneColumnWidth{}]{drawings/2016_09_29.png}
+\caption{Interview 32: Software Engineer's drawing for \quotes{How you feel or how you think about the code}}
+\label{Interview32}
+\end{figure}
+
+
+The team wants to feel pride in improving code quality.  It feels good to be improving the code design and readability. If the team starts neglecting these concerns, it can engender a sense of disgust and apathy for the code can spread throughout the team.
+
+\subsubsection{Product Fit}
+\textbf{Definition:} Product fit is developers believing that features of the product will satisfy the user’s needs.
+
+\textbf{Purpose:} Engineers want to create products that matter to the users. Delivering a product that matters to someone satisfies the self-identity motivation of psychological ownership.
+
+\textbf{Threat: Ignoring user feedback.} When the product manager ignores feedback from user research and usability testing, developers may lose faith in the product’s ability to achieve its goals. Developer motivation and engagement can decrease when developers perceive they are building a feature that users have explicitly said they do not want yet is built to solve a business goal. 
+
+\textbf{Threat: Ignoring developers feedback about the product.} Pivotal’s balanced team approach is founded on collaboration between product managers, interaction designers, and developers. When product managers or other stakeholders ignore feedback from developers, developers can begin to feel less ownership in the product, and in turn, be less motivated to work on the project. 
+
+%When picking up a story, a developer verifies that the story contains clear acceptance criteria. In the absence of acceptance criteria, the developer typically clarifies what needs to be done with the product manager. On one project during which the stakeholders ignored feedback from the developers, one developer recalled, \participantQuote{In this case, I don't feel like spending the extra energy to go and say, `Hey, are you sure? Is this what you want?'} 
+
+Feature apathy or product apathy can result in a poorly crafted product that does not meet the customer’s needs.
+
+\subsubsection{Team Cohesion}
+\textbf{Definition:} Team cohesion is the degree to which team members identify as part of the team, stick together through adversity and take pride in the team’s accomplishments \cite{Bollen1990Perceived, Beal2003Cohesion, Whitworth2007Motivation}.
+
+\textbf{Purpose:} Team cohesion satisfies the \quotes{having a place} motivation of psychological ownership.
+
+\textbf{Threat: Distancing a developer from the team.} Team apathy manifests when developers do not feel that they are a part of the team. Developers feel less ownership of the code base when they feel excluded from the team.
+
+We observed several behaviors that can distance a developer from the team: interrupting the developer during discussions, using poor listening skills so that the developer feels unheard, or talking beyond the developer’s level of technical expertise. 
+
+On one team, during discussions, the team talked about code but never looked at the source code. One developer found these abstract discussions difficult to follow. Sometimes the team discussed parts of the code that the individual had not seen recently. When the team discussed two variants of coding practices without showing concrete examples, the programmer could not contribute. When the developer raised this issue to the team and the team continued with the status quo, the programmer felt marginalized by the team.
+
+Poor onboarding of developers can contribute to feelings of isolation. On one project, there was a time crunch and the team was feeling the pressure to deliver stories. When the team added developers, the team had a \quotes{sink or swim} attitude, letting new team members figure things out on their own, hence making them feel unwelcome.
+
+When developers feel that the team does not care about them, their sense of ownership can decrease.
+
+\subsection{Team Boundaries}
+
+Conway’s law
+
+\subsection{Transitioning to Team Code Ownership}
+\label{Transitioning}
+
+The above results have numerous implications for teams attempting to transition to team code ownership. 
+
+Some developers effortlessly make the transition to team code ownership. They immediately see the benefits of being able to modify any part of the code base and quickly shift from \quotes{I made this} (personal ownership) to \quotes{we made this} (collective ownership.)
+
+Others may struggle with team code ownership for several reasons:
+
+\begin{itemize}  
+
+\item Developers may struggle to transition to a caretaker mindset.  In one interview, a software engineer struggled to describe the developer’s relationship with the code on a very challenging project and settled in on the caretaker metaphor: \participantQuote{Sometimes I kind of feel like a janitor to [the code base].  Maybe caretaker would be better. Yeah, probably caretaker. I feel like a janitor just cleans up messes, but a caretaker makes things better.} 
+
+\item A developer may be distraught at \participantQuote{seeing my work slowly removed from the app.} 
+
+\item Developers can no longer take pride in functionality that they exclusively develop.
+
+\item Existing knowledge silos, which hinder team code ownership, may be slow to break down.
+ 
+\end{itemize}
+
+New hires struggling with the transition slowly realize that \participantQuote{Someone else is going to take over and they're going to do fine. I can move onto something else and that’s okay.} They recognize the lack of long-term individual authorship, learn to expect their code to be transitory, develop trust in their teammates and thus loosely hold personal contributions. \participantQuote{The code that I write today may be in the code base for a little while, and it will evolve into something better.} Eventually,  they experience the benefits of a collaborative environment: \participantQuote{People are a lot more flexible all across the board, with changing things or accepting feedback or collaborating,} and the team can say \quotes{Hey, this is our code!}
+
+Shifting from individual to team code ownership may requires multiple and complementary practices to actively remove knowledge silos. In this case, daily pair rotation helped combat knowledge silos. Moreover, for developers with strong individual ownership tendencies, sharing ownership first with a small group (where trust and communication come easier) may help. One Pivotal engineer uses improvisation and collaboration games to help teams practice letting go of control, trusting the team, and learning to be pleasantly surprised by what emerges. 
+
+\section{Overlapping Pair Rotation}
+\label{OverlappingPairRotation}
+
+Add adhoc and random
+
+\textit{Optimizing for people rotation:} Most teams rotate based on who has paired with whom. Developers try to pair with the person they \quotes{least recently paired with} (basically a Least Recently Used strategy). Some teams use rotation techniques or tools to track this information.
+
+This strategy does not clearly articulate the purpose of knowledge silo removal and the need for knowledge transfer. As an example, developers who recently left a track of work might ask to be rotated back without realizing the potential cost to the team. This prevents an opportunity to spread the knowledge to the rest of the team. (This issue is more serious on larger teams; on a four person team, this is not an issue).
+
+\textit{Optimizing for personal preferences:} A few teams allow developers to pick with whom they will work or on which stories to work based on individual preferences. This has the same downsides as the previous strategy. 
+
+\textit{Optimizing for context sharing:} A few teams are experimenting with rotating onto a track the person who has not been working on the track for the longest time. The goal each day is for the developer leaving the track next to empower the developer who will remain on the track. Before any rotation, the remaining developer is asked, \quotes{Was enough context shared with you?} If the answer is no, then the first developer does not leave and the pair continues to work together for another day. This provides a feedback loop on how well the team is transferring knowledge. 
+
+
+\section{Results Evaluation and Quality Criteria}
+\label{ResultsEvaluation}
 
 Charmaz identifies four criteria for evaluating a Grounded Theory: credibility (\quotes{Is there sufficient data to merit claims?}), originality (\quotes{Do the categories offer new insights?}), resonance (\quotes{Does the theory make sense to participants?}), and usefulness (\quotes{Does the theory offer useful interpretations?}) \cite{StolGroundedTheory}. 
 
-\textbf{Credibility:} The current data set is rich and its analysis leads to theory saturation. (Saturation means that the properties of the theory are complete and are not affected by new data.) The data set comprises 21 intensive interviews conducted in four different offices, field notes from participant observation on Project Quattuor, and the first author’s involvement in four other projects as participant-observer.
+\textbf{Credibility:} The current data set is rich and its analysis leads to theoretical saturation. (Saturation means that the properties of the theory are complete and are not affected by new data.) The data set comprises 21 intensive interviews conducted in four different offices, field notes from participant observation on Project Quattuor, and the first author’s involvement in four other projects as participant-observer.
 
-\textbf{Originality:} The theory uniquely depicts the principles, policies, and practices enabling software development sustainability in an organization. Since the organization under study follows Extreme Programming, it is not surprising that many of the practices of Sustainable Software Development are defined in Extreme Programming. However, overlapping pair rotation and its supporting principles, policies, and practices are central and unique to the proposed theory.
+\textbf{Originality:} The theory uniquely depicts the principles, policies, and practices enabling software development sustainability in an organization. Since the organization under study follows Extreme Programming, it is not surprising that many of the practices of Sustainable Software Development are defined in Extreme Programming. However, overlapping pair rotation and its supporting principles, policies, and practices are central and unique to the proposed theory. The paper broadens the idea of team code ownership by acknowledging that collective code ownership is more than a policy statement, and by uniquely identifying factors that affect the team’s sense of code ownership.
 
-\textbf{Resonance:} The participants examined the theory. The theory resonates with their experience and reflects the way they work.
+\textbf{Resonance:} Several participants reviewed the theory and provided feedback.
+The theory resonates with their experience and reflects the way they work. These research results were presented at five Pivotal offices yielding extensive discussions about how to leverage the theory. This process produced no significant changes, which is not surprising because participant observation mitigates resonance problems.
 
 \textbf{Usefulness:} The theory informs Pivotal engineers as to why Pivotal purposefully avoids knowledge silos, and how the theory’s principles, policies, and practices work together to accomplish the team’s goals. The theory explains why the principles, policies, and practices should be incorporated together. A few managers use  the theory to help potential clients understand how Pivotal achieves the business goals of both the client and Pivotal.
 
-\section{Threats to Validity}
 
 \subsection{External Validity}
 
-\textbf{Generalizability across situations:} Grounded Theory does not support statistical generalization from a sample to a population. The results may not be applicable to other teams or other domains. There are four broad types of scientific generalization: 1) from data to descriptions, 2) from descriptions to concepts, 3) from concepts to theory, 4) from theory to description \cite{Lee2003generalizing}. Grounded Theory research involves the first three kinds of generalization. Generalizing from a theory tested in one context to descriptions of a new context (the fourth kind of generalization) could be done by the researchers in the new context, on a case-by-case basis. However, we have not attempted to perform any type four generalizations at this time.
+Regarding \textbf{external validitiy}, Grounded Theory does not support statistical generalization from a sample to a population. The results may not be applicable to other teams or other domains. There are four broad types of scientific generalization: 1) from data to descriptions, 2) from descriptions to concepts, 3) from concepts to theory, 4) from theory to description \cite{Lee2003generalizing}. Grounded Theory research involves the first three kinds of generalization. Generalizing from a theory tested in one context to descriptions of a new context (the fourth kind of generalization) could be done by the researchers in the new context, on a case-by-case basis. However, we have not attempted to perform any type four generalizations at this time.
 
-\subsection{Internal Validity}
-\textbf{Researcher bias:} A risk of the participant-observer technique is that the researcher may lose perspective and become biased by being a member of the team. An outside observer might see something the researcher missed. We mitigated this risk by recording interviews and with a colleague reviewing the coding process.
-
-\textbf{Prior knowledge bias:} With Grounded Theory, prior knowledge can aid the researcher in looking at interesting research questions or create difficulties by blinding the researcher about possible explanations \cite{GlaserIssues}. We mitigated this risk with a colleague reviewing the coding process. 
+Finally, the results may be influenced by \textbf{researcher bias} or \textbf{prior knowledge bias.}  
+During participant observation, the researcher may lose perspective and become biased by being a member of the team. That is, while a participant-observer gains perspective an outsider cannot, an outside observer might see something a participant observer will miss. Similarly, while prior knowledge helps the researcher interpret events and select lines of inquiry, prior knowledge may also blind the researcher to alternative explanations \cite{GlaserIssues}. We mitigated these risks by recording interviews and having the second and third authors review the coding process
 \section{Future Research}
 We are interested in the tension between individual and team ownership, as well as the factors that foster and decrease the sense of ownership. Developers, interaction designers, and product managers all have different goals for their role. In future work, we plan to examine how the sense of ownership is driven by different factors for each role.
 
@@ -407,6 +581,17 @@ The primary benefits to the software developer are the ability to understand the
 
 The primary benefit to the employer is business agility. The engineering team continues to deliver software week after week, month after month, while surviving cataclysmic events. Things do not fall apart when the superstar developer leaves because features or components are not critically tied to a particular individual. Critical feature work can be parallelized since anyone can work on any feature.  The whole team’s talents are leveraged.
 
+\subsection{Conclusion from TCO paper}
+This paper reports results from a participant-observation, constructivist grounded theory study at Pivotal, a large American software company employing Extreme Programming practices. It provides three main contributions.
+
+1) Our observations clearly indicate that \textbf{team code ownership is a feeling to be engendered not a policy to be decreed}.
+
+2) Meanwhile, both discussions with and observations of participants suggest five factors associated with strong feelings team code ownership. Pivotal developers more acutely feel team code ownership when i) they understand the system context; ii) they have contributed to the code in question; iii) they perceive code quality as high; iv) they believe the product will satisfy user needs; and v) they perceive team cohesion as high.   
+
+3) Moreover, diverse events and trends can undermine sense of ownership, including:  increasing knowledge silos, increasing code base size, increasing team size, inability to contribute, pressure to deliver and deprioritizing continuous refactoring, ignoring user feedback, ignoring developer feedback, and distancing a developer from the team. 
+
+In conclusion, Pivotal’s developers find team code ownership highly advantageous; however, transitioning to a team code ownership model is easier for some than others. Some agile practices including continuous pair programming, overlapping pair rotation, continuous refactoring, and test driven development appear to help. Promising angles for future research include more nuanced explorations of the code ownership spectrum, further exploration of the roles of emotion and identity, as well as developing specific practices for facilitating ownership transitions. 
+
 
 \appendices
 \section{Proof of the First Zonklar Equation}
@@ -418,7 +603,8 @@ Appendix one text goes here.
 Appendix two text goes here.
 
 \section*{Acknowledgments}
-Thank you to Rob Mee, David Goudreau, Ryan Richard, and Zach Larson for making this research possible. Thank you to Karina Sils for creating Figure \ref{PlannedDeveloperStaffing} and Figure \ref{DeveloperStaffing} using Sketch.
+
+Thank you to Rob Mee, David Goudreau, Ryan Richard, Zach Larson, Elisabeth Hendrickson, and Michael Schubert for making this research possible. Thank you to Karina Sils for creating Figure \ref{PlannedDeveloperStaffing} and Figure \ref{DeveloperStaffing} using Sketch.
 
 \ifCLASSOPTIONcaptionsoff
   \newpage
@@ -476,6 +662,11 @@ Biography text here.
 
 
 
+% Removed - opinion in the results section
+%Another potential mitigation strategy is for each pair of the team to start the pairing day by reviewing changes from the previous day. For a large team, this additional work becomes increasingly necessary. 
+
+% Removed
+% People, not machines, create software, and as such, we need to factor psychological considerations. As one developer expressed, \participantQuote{We are people [and our interactions with the code is as meaningful as the code itself].} Listening, caring, and empathizing with one another allows the team to work through differences of opinion towards a stronger code base. One interaction designer said, \participantQuote{You have to be an adult to work here.} Letting go of personal ownership enables the team to achieve team code ownership. Sustainable Software Development fosters an environment where the whole is more than the sum of the parts. 
 
 
 
@@ -654,6 +845,25 @@ Supported by Live on Master & Example 4c \\
 \hline
 \end{tabular}
 \end{table*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
